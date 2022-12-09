@@ -1,0 +1,7 @@
+{
+  "name": "ionic-sorting-visualizer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
