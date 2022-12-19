@@ -1,9 +1,45 @@
-<ion-header>
+<!-- Create a header with title and a back button -->
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>bubble-sort</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Bubble Sort
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="">
+  <!-- Show a start and pause button -->
+  <ion-button (click)="start()" expand="block">Start</ion-button>
+  <ion-button (click)="pause()" expand="block">Pause</ion-button>
+  <!-- Show a slider to control the speed of the animation -->
+  <ion-item>
+    <ion-label>Speed</ion-label>
+    <ion-range min="100" max="1000" step="1" snaps="true" color="secondary" [(ngModel)]="speed">
+      <ion-icon slot="start" name="speedometer"></ion-icon>
+      <ion-icon slot="end" name="speedometer"></ion-icon>
+    </ion-range>
+  </ion-item>
+
+  <!-- Show the Array as bars -->
+  <ion-grid>
+    <ion-row #animearray >
+
+      <ion-col *ngFor="let bar of array; let i = index" >
+        <!-- Each bar should appearwith appropriate height -->
+        <!-- Max height is 10 -->
+        <!-- Min height is 1 -->
+        <ion-card class="bar" [style.height]="array[i] * 8 + 'vh'" [style.margin]="0" [ngClass]="'array-'+bar">
+          <ion-card-content style="display:flex;align-self: center;justify-content: center;">
+            <!-- Show the value of the bar -->
+            {{array[i]}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>

@@ -7,6 +7,28 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  features = [
+    {
+      title: 'Bubble Sort',
+      url: '/bubble-sort',
+    },
+    {
+      title: 'Insertion Sort',
+      url: '/insertion-sort',
+    },
+    {
+      title: 'Selection Sort',
+      url: '/selection-sort',
+    },
+    {
+      title: 'Merge Sort',
+      url: '/merge-sort',
+    },
+    {
+      title: 'Quick Sort',
+      url: '/quick-sort',
+    },
+  ];
   constructor() {}
 
 }

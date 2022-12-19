@@ -7,5 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <!-- Show feature in the form of a list -->
+  <ion-list>
+    <ion-item *ngFor="let feature of features">
+      <ion-label>{{feature.title}}</ion-label>
+      <ion-button [routerLink]="feature.url" routerDirection="forward" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

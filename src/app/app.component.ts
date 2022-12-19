@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private router: Router) {
+    router.events
+    .subscribe((event: NavigationStart) => {
+      history.pushState(null, '', location.href);
+      if (event.navigationTrigger === 'popstate') {
+        console.log('Back button pressed');
+        history.go(1);
+        alert('Please use In-app Navigations');
+      }
+    });
+  }
 }
