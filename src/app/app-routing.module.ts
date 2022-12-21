@@ -11,10 +11,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'bubble-sort',
-    loadChildren: () => import('./views/bubble-sort/bubble-sort.module').then( m => m.BubbleSortPageModule)
-  },
 ];
 
 @NgModule({
